@@ -1,0 +1,27 @@
+{
+  "name": "notetaker",
+  "version": "1.0.0",
+  "description": "\"App that requires user input to populate notes that can be logged and saved\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "\"test\"",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laperolanegra10/NoteTaker.git"
+  },
+  "author": "DanielJuarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laperolanegra10/NoteTaker/issues"
+  },
+  "homepage": "https://github.com/laperolanegra10/NoteTaker#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "inquirer": "^8.2.1"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
