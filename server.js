@@ -15,16 +15,16 @@ app.use('/api, apiRoutes');
 
 // html routes * check to see if 'public' needs to be listed.
 app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, '/assets/index.html'))
+    res.sendFile(path.join(__dirname, 'public', 'index.html'))
 }); 
 
-app.get('/ntoes', (req,res) => {
-    res.sendFile(path.join(__dirname, '/assets/notes.html')) 
+app.get('/notes', (req,res) => {
+    res.sendFile(path.join(__dirname, 'public', 'notes.html')) 
 });
 
 app.get('*', (req,res) => {
     res.status(404) 
-    res.sendFile(path.join(__dirname, '/assets/index.html'));
+    res.sendFile(path.join(__dirname, 'publlic', 'index.html'));
 });
 
 
