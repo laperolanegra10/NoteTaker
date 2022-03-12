@@ -21,8 +21,9 @@ router.post('/notes', (req,rec) => {
     parseNote.push(newNote);
 
     fs.writeFileSync('./db/db.json', JSON.stringify(parseNote));
+    res.json(newNote);
 });
 
 router.delete('')
 
-module.exports = router
+module.exports = router;
