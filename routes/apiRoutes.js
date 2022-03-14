@@ -23,14 +23,14 @@ router.post('/', (req,res) => {
     fs.writeFileSync('./db/db.json', JSON.stringify(parseNote));
     res.json(newNote);
 });
-
+// Bonus delete request
 router.delete('/:id', (req, res) => {
     const readNote = fs.readFileSync('./db/db.json');
     const parsedNote = JSON.parse(readNote);
    const found = parsedNote.some(note => note.id !== req.params.id);
    
    if (found) {
-       fs.writeFileSync('./db/db.json', JSON.stringify(parsedNote.filter(note => note.id !== req.params.id,), null, 4))
+       fs.writeFileSync('./db/db.json', JSON.stringify(parsedNote.filter(note => note.id !== req.params.id)))
        res.json({
            message: 'Note Has Been Demolished!',
            notes: parsedNote.filter(note => note.id !== req.params.id)
