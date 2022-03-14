@@ -16,7 +16,7 @@ router.post('/', (req,res) => {
     };
     const readNote= fs.readFileSync('./db/db.json');
 
-    const parseNote = JSON.parsing(readNote); 
+    const parseNote = JSON.parse(readNote); 
 
     parseNote.push(newNote);
 
@@ -24,6 +24,6 @@ router.post('/', (req,res) => {
     res.json(newNote);
 });
 
-router.delete('')
+// router.delete('')
 
 module.exports = router;
