@@ -19,7 +19,8 @@
   "homepage": "https://github.com/laperolanegra10/NoteTaker#readme",
   "dependencies": {
     "express": "^4.17.3",
-    "inquirer": "^8.2.1"
+    "inquirer": "^8.2.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "jest": "^27.5.1"
