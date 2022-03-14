@@ -24,6 +24,20 @@ router.post('/', (req,res) => {
     res.json(newNote);
 });
 
-// router.delete('')
+router.delete('/:id', (req, res) => {
+    const readNote = fs.readFileSync('./db/db.json');
+    const parsedNote = JSON.parse(readNote);
+   const found = parsedNote.some(note => note.id !== req.params.id);
+   
+   if (found) {
+       fs.writeFileSync('./db/db.json', JSON.stringify(parsedNote.filter(note => note.id !== req.params.id,), null, 4))
+       res.json({
+           message: 'Note Has Been Demolished!',
+           notes: parsedNote.filter(note => note.id !== req.params.id)
+       });
+   } else {
+       res.status(400).json({message: `Note with the id ${req.params.id} found`});
+   }
+});
 
 module.exports = router;
