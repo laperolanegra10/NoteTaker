@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../db/db.json'));
 })
 
-router.post('/', (req,rec) => {
+router.post('/', (req,res) => {
     const newNote = {
         id: uuid.v4(),
         title: req.body.title,
