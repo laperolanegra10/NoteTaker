@@ -1,15 +1,14 @@
 const router = require('express').Router();
 const fs = require('fs');
-// const db = require('./db');
 const uuid = require('uuid');
 const path = require('path');
 
 // Api Routes
-router.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, './db/db.json'));
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../db/db.json'));
 })
 
-router.post('/notes', (req,rec) => {
+router.post('/', (req,rec) => {
     const newNote = {
         id: uuid.v4(),
         title: req.body.title,
